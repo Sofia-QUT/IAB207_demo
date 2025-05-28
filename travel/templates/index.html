@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<!--Jumbotron-->
+<div class="container">
+   <div class="row justify-content-center mt-5 pb-4">
+      <div class="col-md-8">
+         <div class="card shadow p-5 mb-5 bg-light">
+            <h1 class="text-center mb-3">Find our best travel deals</h1>
+            <form class="form-inline d-flex flex-nowrap">
+
+               <select class="form-select" aria-label="Default select example">
+                  <option selected>Select a destination...</option>
+                  <option value="america">America</option>
+                  <option value="africa">Africa</option>
+                  <option value="africa">Oceania</option>
+                  <option value="africa">Asia</option>
+                  <option value="africa">Europe</option>
+               </select>
+               <button type="submit" class="flex-shrink-1 btn btn-primary ms-2">Submit</button>
+            </form>
+
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+   <div class="row mt-5 mb-5 justify-content-center">
+      <div class="col-md-10">
+         <div class="media border p-3 d-flex justify-content-start">
+            <img class="align-self-center me-3" style="max-width:120px"
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/600px-Earth_Western_Hemisphere_transparent_background.png"
+               alt="Planet Earth">
+            <div class="align-self-center media-body">
+               <h5 class="mt-0">Find the best destinations on earth</h5>
+               <p class="d-none d-sm-block">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem adipisci impedit ad similique officiis
+                  optio tempora doloribus vel obcaecati est facilis suscipit perspiciatis quidem delectus inventore,
+                  voluptas quod neque voluptatibus!
+               </p>
+               <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Join Now</a>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="card-group">
+      <div class="card mx-3">
+         <img class="card-img-top" src="{{ url_for('static', filename='img/greece.jpg') }}" alt="Greece">
+         <div class="card-body">
+            <h5 class="card-title">Greece</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, amet ipsam! Eius
+               non odio molestiae omnis laboriosam. Dicta officia modi placeat odit magnam maiores exercitationem
+               sapiente eum eveniet, suscipit similique?
+            </p>
+         </div>
+         <div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div>
+      </div>
+      <div class="card mx-3">
+         <img class="card-img-top" src="{{ url_for('static', filename='img/rome.jpg') }}" alt="Rome">
+         <div class="card-body">
+            <h5 class="card-title">Rome</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed quod ut nisi sunt
+               expedita ex tenetur. Nihil quo adipisci corporis inventore ullam recusandae quaerat consequatur,
+               blanditiis voluptates consequuntur reiciendis beatae!
+            </p>
+         </div>
+         <div class="card-footer"><small class="text-muted">Last updated 7 hours ago</small></div>
+      </div>
+      <div class="card mx-3">
+         <img class="card-img-top" src="{{ url_for('static', filename='img/austria.jpg') }}" alt="Austria">
+         <div class="card-body">
+            <h5 class="card-title">Austria</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate non tempore, eaque
+               dolores, fugit expedita beatae dolorem delectus et explicabo nam, fugiat quisquam repudiandae saepe.
+               Dolores ab reiciendis laudantium molestiae.
+            </p>
+         </div>
+         <div class="card-footer"><small class="text-muted">Last updated 10 days ago</small></div>
+      </div>
+   </div>
+</div>
+{% endblock %}

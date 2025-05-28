@@ -47,40 +47,19 @@
       </div>
    </div>
 
+
    <div class="card-group">
+      {% for destination in destinations %}
       <div class="card mx-3">
-         <img class="card-img-top" src="{{ url_for('static', filename='img/greece.jpg') }}" alt="Greece">
+         <img class="card-img-top" src="{{ destination.image }}" alt="destination picture">
          <div class="card-body">
-            <h5 class="card-title">Greece</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, amet ipsam! Eius
-               non odio molestiae omnis laboriosam. Dicta officia modi placeat odit magnam maiores exercitationem
-               sapiente eum eveniet, suscipit similique?
-            </p>
+            <h5 class="card-title">{{ destination.name }}</h5>
+            <p class="card-text">{{ destination.description }}</p>
          </div>
-         <div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div>
+         <div class="card-footer"><a href="{{ url_for('destination.show', id=destination.id) }}" class="btn btn-danger">
+               View Details </a></div>
       </div>
-      <div class="card mx-3">
-         <img class="card-img-top" src="{{ url_for('static', filename='img/rome.jpg') }}" alt="Rome">
-         <div class="card-body">
-            <h5 class="card-title">Rome</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed quod ut nisi sunt
-               expedita ex tenetur. Nihil quo adipisci corporis inventore ullam recusandae quaerat consequatur,
-               blanditiis voluptates consequuntur reiciendis beatae!
-            </p>
-         </div>
-         <div class="card-footer"><small class="text-muted">Last updated 7 hours ago</small></div>
-      </div>
-      <div class="card mx-3">
-         <img class="card-img-top" src="{{ url_for('static', filename='img/austria.jpg') }}" alt="Austria">
-         <div class="card-body">
-            <h5 class="card-title">Austria</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate non tempore, eaque
-               dolores, fugit expedita beatae dolorem delectus et explicabo nam, fugiat quisquam repudiandae saepe.
-               Dolores ab reiciendis laudantium molestiae.
-            </p>
-         </div>
-         <div class="card-footer"><small class="text-muted">Last updated 10 days ago</small></div>
-      </div>
+      {% endfor %}
    </div>
 </div>
 {% endblock %}

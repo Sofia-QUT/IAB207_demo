@@ -23,3 +23,8 @@ img.login-register {
 .locations h1 {
     margin-bottom: 2%;
 }
+
+img {
+    width: 100%;
+    border-radius: 1%;
+}
